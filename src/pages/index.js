@@ -113,7 +113,7 @@
 //   )
 // }
 
-import Navbar from "@/Component/Navbar/Navbar";
+import Navbar from "@/pages/Navbar";
 import { createContext, useState } from "react";
 import { AppContext } from "./_app";
 import { useContext } from "react";
@@ -126,10 +126,10 @@ function App() {
   return (
     <div>
       <Home />
-      <Navbar />
-      <Form />
-      <br />
-      <h1>this is the home section and user is: {username}</h1>
+      {/* <Navbar /> */}
+      {/* <Form /> */}
+      {/* <br /> */}
+      {/* <h1>this is the home section and user is: {username}</h1> */}
       {/* <Home /> */}
     </div>
   );
