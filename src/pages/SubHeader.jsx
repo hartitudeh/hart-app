@@ -5,17 +5,13 @@ import styled from "styled-components";
 import FlightCheck from "./FlightCheck";
 
 const SubHeaderSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 97%;
   box-shadow: 4px 14px 28px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 0px 30px;
-  height: fit-content;
+  height: 265px;
   margin: 0 auto;
-  //   background-color: #f4f6fc;
-  background: crimson;
+  background-color: #f4f6fc;
   margin-bottom: 20px;
   position: absolute;
   z-index: 9;
@@ -28,13 +24,15 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 97%;
   // max-width: 1200px;
   // height: 100vh;
   // background-color: #f4f6fc;
   padding: 10px 0px 0px 0px;
-  position: relative;
-  top: -83px;
+  position: absolute;
+  left: 40px;
+  top: -10px;
+  margin-bottom: 30px;
   // z-index: 999;
 `;
 
@@ -90,25 +88,26 @@ const RightTopSec = styled.div`
   }
 `;
 
-//   const SearchBtn = styled.button`
-//     background: none;
-//     top: 169px;
-//     color: #fff;
-//     border: 1px solid #19013b;
-//     position: absolute;
-//     padding: 10px 20px;
-//     border-radius: 5px;
-//     width: 134px;
-//     font-size: 16px;
-//     font-family: "Poppins";
-//     background: #19013b;
-//
-//     &:hover {
-//       background: transparent;
-//       color: #8b3eea;
-//       border: 1px solid #8b3eea;
-//     }
-//   `;
+const SearchBtn = styled.button`
+  // background: none;
+  // top: 199px;
+  left: 45%;
+  bottom: 10px;
+  color: #fff;
+  position: absolute;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 134px;
+  font-size: 16px;
+  font-family: "Poppins";
+  background: #8b3eea;
+
+  &:hover {
+    background: transparent;
+    color: #8b3eea;
+    border: 1px solid #8b3eea;
+  }
+`;
 
 const SubHeader = () => {
   const [active, setActive] = useState(0);
@@ -149,7 +148,7 @@ const SubHeader = () => {
       </Container>
 
       <FlightCheck />
-      <button className="SearchBtn">Search</button>
+      <SearchBtn>Search</SearchBtn>
     </SubHeaderSection>
   );
 };
