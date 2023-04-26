@@ -26,12 +26,11 @@ import {
 const FlightContainer = styled.div`
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 25% 25% 35% 15%);
   width: 100%;
   //   justify-content: space-between;
-  margin: 75px 0px;
-  //   margin-bottom: 30px;
-  //   padding: 0px 30px;
+  margin: 75px -30px;
+  padding: 0px 30px;
   color: #19013b;
   gap: 20px;
 
@@ -40,8 +39,8 @@ const FlightContainer = styled.div`
     position: absolute;
     width: 38.2px;
     height: 38px;
-    left: 314px;
-    top: 101px;
+    left: 312px;
+    top: 105px;
     border-radius: 50px;
     border: 3px solid #fff;
     padding: 5px;
@@ -55,52 +54,47 @@ const FlightContainer = styled.div`
 `;
 
 const FromSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 80% 20%);
+  //   justify-content: center;
+  align-items: start;
+  //   flex-direction: column;
   color: #19013b;
-  width: 100%;
-  height: 90px;
+  //   width: 100%;
+  //   height: 90px;
   border-radius: 10px;
   background: rgba(139, 62, 234, 0.09);
 
   .FromSecContent {
     // background: red;
     // display: flex;
-    width: 80%;
+    width: 100%;
     height: 100%;
     display: block;
     margin: 0 !important;
-    margin-top: 15px;
-    padding: 10px 0px;
+    // margin: 15px;
+    padding: 15px;
 
     h5 {
       width: 35.87px;
       height: 20px;
-      left: 83px;
-      top: 82px;
       font-family: "Poppins";
       font-style: normal;
       font-weight: 400;
+      margin-bottom: 5px;
       font-size: 14px;
-      line-height: 28px;
       /* or 200% */
-      display: flex;
       align-items: center;
       color: #818090;
     }
     p.FromFirstPara {
       width: 93.92px;
       height: 25px;
-      left: 83px;
-      top: 103px;
+      margin-bottom: 5px;
       font-family: "Poppins";
       font-style: normal;
       font-weight: 600;
       font-size: 15px;
-      line-height: 22px;
-      display: flex;
       align-items: center;
       color: #000000;
     }
@@ -114,10 +108,6 @@ const FromSection = styled.div`
       font-style: normal;
       font-weight: 600;
       font-size: 11px;
-      line-height: 18px;
-      /* or 164% */
-
-      display: flex;
       align-items: center;
 
       color: #212529;
@@ -126,31 +116,12 @@ const FromSection = styled.div`
 `;
 
 const FromSecIcon = styled.div`
-
-
-  
-  .icon {
-      position: absolute;
-      width: 30.2px;
-      height: 24px;
-      left: 298px;
-      top: 65px;
-
-      font-family: "Font Awesome 5 Free";
-      font-style: normal;
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-
-      color: #212529;
-    }
-  }
-
-  `;
+  padding: 12px 0px 0px 17px;
+  font-size: 24px;
+  font-weight: 900;
+  align-items: center;
+  color: #212529;
+`;
 
 const ToSection = styled.div`
   display: flex;
@@ -170,8 +141,6 @@ const DateSection = styled.div`
   align-items: center;
   flex-direction: column;
   color: #19013b;
-  width: 100%;
-  height: 90px;
   border-radius: 10px;
   background: rgba(139, 62, 234, 0.09);
 `;
@@ -182,8 +151,6 @@ const PassengerSection = styled.div`
   align-items: center;
   flex-direction: column;
   color: #19013b;
-  width: 100%;
-  height: 90px;
   border-radius: 10px;
   background: rgba(139, 62, 234, 0.09);
 `;
@@ -191,9 +158,19 @@ const PassengerSection = styled.div`
 const FlightCheck = () => {
   return (
     <FlightContainer className="">
-      <CardSection />
+      <CardSection
+        title={"From"}
+        country={"New York"}
+        city={"JFK - John F. Kennedy International..."}
+        icon={<FaPlaneDeparture />}
+      />
       <FaExchangeAlt className="BetweenSec" />
-      <CardSection />
+      <CardSection
+        title={"To"}
+        country={"London "}
+        city={"LCY, London city airport..."}
+        icon={<FaPlaneArrival />}
+      />
       {/* <ToSection className="ToSection">
         <h2>Lorem ipsum dolor sit amet</h2>
         <FaPlaneArrival />
@@ -208,19 +185,36 @@ const FlightCheck = () => {
   );
 };
 
-const CardSection = () => {
+const CardSection = (props) => {
   return (
     <FromSection className="FromSection">
       <div className="FromSecContent">
-        <h5>From</h5>
-        <p className="FromFirstPara">New York</p>
-        <p className="FromSecondPara">JFK - John F. Kennedy International...</p>
+        <h5>{props.title}</h5>
+        <p className="FromFirstPara">{props.country}</p>
+        <p className="FromSecondPara">{props.city}</p>
       </div>
       <FromSecIcon className="FromSecIcon">
-        <FaPlaneDeparture />
+        {props.icon}
       </FromSecIcon>
     </FromSection>
   );
 };
 
 export default FlightCheck;
+
+// import Calendar from 'react-calendar';
+// import 'react-calendar/dist/Calendar.css';
+//   
+// export default function CalendarGfg() {
+//     const [value, onChange] = useState(new Date());
+//   
+//     return (
+//         <div>
+//             <h1>NextJs Calendar - GeeksforGeeks</h1>
+//             <Calendar
+//                 onChange={onChange}
+//                 value={value}
+//             />
+//         </div>
+//     );
+// }
