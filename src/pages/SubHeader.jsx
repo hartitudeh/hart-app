@@ -5,9 +5,10 @@ import styled from "styled-components";
 import FlightCheck from "./FlightCheck";
 
 const SubHeaderSection = styled.div`
-  width: 97%;
-  box-shadow: 4px 14px 28px rgba(0, 0, 0, 0.1);
+  width: 92%;
+  box-shadow: -2px -1px 13px 0px rgb(0 0 0 / 30%);
   border-radius: 20px;
+  //   border: 0.4px solid #8b3eea;
   padding: 0px 30px;
   height: 265px;
   margin: 0 auto;
@@ -15,7 +16,7 @@ const SubHeaderSection = styled.div`
   margin-bottom: 20px;
   position: absolute;
   z-index: 9;
-  top: 108%;
+  top: 85%;
   transform: translate(-50%, -50%);
   left: 50%;
 `;
@@ -42,7 +43,7 @@ const TopSec = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-  padding: 10px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
   position: relative;
   // z-index: 999;
 `;

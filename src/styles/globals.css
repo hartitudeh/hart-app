@@ -94,7 +94,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-    background: #F4F6FC;
+    background: #F4F6FC !important;
     /* padding: 0px 30px; */
     /* justify-content: center; */
 }
@@ -108,4 +108,13 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+/* DatePicker Styling Here */
+.rdrDefinedRangesWrapper{
+    display: none !important;
+}
+.rdrDateDisplay{
+    display: none !important;
 }
