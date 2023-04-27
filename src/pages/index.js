@@ -113,7 +113,7 @@
 //   )
 // }
 
-import Navbar from "@/pages/Navbar";
+import Navbar from "@/Component/Navbar";
 import { createContext, useState } from "react";
 import { AppContext } from "./_app";
 import { useContext } from "react";

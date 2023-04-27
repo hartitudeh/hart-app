@@ -1,15 +1,14 @@
-import styled from "styled-components";
 import { addDays } from "date-fns";
 import { useState } from "react";
-import { DateRangePicker } from "react-date-range";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
+// import "react-date-range/dist/styles.css"; // main css file
+// import "react-date-range/dist/theme/default.css"; // theme css file
+import { AiOutlineCalendar } from "react-icons/ai";
 import {
   FaExchangeAlt,
   FaPlaneArrival,
   FaPlaneDeparture,
 } from "react-icons/fa";
-import AiOutlineCalendar from "react-icons/ai";
+import styled from "styled-components";
 
 const FlightContainer = styled.div`
   display: grid;

@@ -1,13 +1,13 @@
 import Link from "next/link";
-import Dropdown from "./Dropdown";
+import Dropdown from "../Component/Dropdown";
 import styled from "styled-components";
 import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.png";
 import twitterIcon from "../assets/twitter.png";
 import linkedinIcon from "../assets/linkedin.png";
 import Image from "next/image";
-import Navbar from "./Navbar";
-import SubHeader from "./SubHeader";
+import Navbar from "../Component/Navbar";
+import SubHeader from "../Component/SubHeader";
 
 const options = [
   { value: "option1", label: "English" },
@@ -31,7 +31,7 @@ const HeaderSection = styled.div`
   z-index: 999;
   width: 100%;
   color: #19013b;
-//   height: 30px;
+  //   height: 30px;
   margin-bottom: 20px;
 `;
 const UpperNav = styled.div`
