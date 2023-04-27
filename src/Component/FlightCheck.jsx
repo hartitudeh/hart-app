@@ -122,25 +122,25 @@ const FromSecIcon = styled.div`
 //   background: rgba(139, 62, 234, 0.09);
 // `;
 
-const DateSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #19013b;
-  border-radius: 10px;
-  background: rgba(139, 62, 234, 0.09);
-`;
-
-const PassengerSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #19013b;
-  border-radius: 10px;
-  background: rgba(139, 62, 234, 0.09);
-`;
+// const DateSection = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   color: #19013b;
+//   border-radius: 10px;
+//   background: rgba(139, 62, 234, 0.09);
+// `;
+//
+// const PassengerSection = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   color: #19013b;
+//   border-radius: 10px;
+//   background: rgba(139, 62, 234, 0.09);
+// `;
 
 const FlightCheck = () => {
   const [state, setState] = useState([

@@ -119,7 +119,7 @@ const SubHeader = () => {
     { name: "Tour", icon: <TbWorld /> },
     { name: "Visa", icon: <FaPassport /> },
   ];
-  const array1 = ["One way", "Roundtrip", "Multy city"];
+  const array1 = ["One way", "Roundtrip", "Multi city"];
 
   return (
     <SubHeaderSection>
@@ -139,8 +139,8 @@ const SubHeader = () => {
             {array1.map((el, i) => (
               <LinkComponent
                 key={i}
-                setActive1={() => setActive1(i)}
-                active={active === i}
+                onClick={() => setActive1(i)}
+                active={active1 === i}
                 k={el}
               />
             ))}
@@ -162,7 +162,7 @@ const MyDiv = styled.button`
 `;
 
 const Mylink = styled.a`
-  color: ${(props) => (props.active1 ? "#8b3eea" : "#2B2540")};
+  color: ${(props) => (props.active ? "#8b3eea" : "#2B2540")};
 `;
 
 const ButtonComponent = (props) => {
@@ -177,9 +177,10 @@ const ButtonComponent = (props) => {
 };
 
 const LinkComponent = (props) => {
-  const { k, active1, setActive1 } = props;
+  const { k, active, onClick } = props;
+  console.log("acive: ", active);
   return (
-    <Mylink onClick={setActive1} active1={active1}>
+    <Mylink active={active} onClick={onClick}>
       {k}
     </Mylink>
   );
