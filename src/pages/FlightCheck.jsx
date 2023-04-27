@@ -1,27 +1,15 @@
 import styled from "styled-components";
+import { addDays } from "date-fns";
+import { useState } from "react";
+import { DateRangePicker } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import {
   FaExchangeAlt,
   FaPlaneArrival,
   FaPlaneDeparture,
 } from "react-icons/fa";
-
-// const FlightContainer = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 100%;
-//   padding: 10px 0px 0px 0px;
-//   position:absolute;
-//   position: relative;
-//   top: 10%;
-//   // z-index: 999;
-//   color: #19013b;
-// `;
-//
-// const FromSection = styled.div`
-//   display: flex;
-//   color: #19013b;
-// `;
+import AiOutlineCalendar from "react-icons/ai";
 
 const FlightContainer = styled.div`
   display: grid;
@@ -39,7 +27,7 @@ const FlightContainer = styled.div`
     position: absolute;
     width: 38.2px;
     height: 38px;
-    left: 312px;
+    left: 269px;
     top: 105px;
     border-radius: 50px;
     border: 3px solid #fff;
@@ -76,7 +64,7 @@ const FromSection = styled.div`
     padding: 15px;
 
     h5 {
-      width: 35.87px;
+      width: 100px;
       height: 20px;
       font-family: "Poppins";
       font-style: normal;
@@ -116,24 +104,24 @@ const FromSection = styled.div`
 `;
 
 const FromSecIcon = styled.div`
-  padding: 12px 0px 0px 17px;
-  font-size: 24px;
+  padding: 14px 0px 0px 0px;
+  font-size: 35px;
   font-weight: 900;
   align-items: center;
   color: #212529;
 `;
 
-const ToSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #19013b;
-  width: 100%;
-  height: 90px;
-  border-radius: 10px;
-  background: rgba(139, 62, 234, 0.09);
-`;
+// const ToSection = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   color: #19013b;
+//   width: 100%;
+//   height: 90px;
+//   border-radius: 10px;
+//   background: rgba(139, 62, 234, 0.09);
+// `;
 
 const DateSection = styled.div`
   display: flex;
@@ -156,6 +144,14 @@ const PassengerSection = styled.div`
 `;
 
 const FlightCheck = () => {
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
+
   return (
     <FlightContainer className="">
       <CardSection
@@ -171,16 +167,39 @@ const FlightCheck = () => {
         city={"LCY, London city airport..."}
         icon={<FaPlaneArrival />}
       />
+      <CardSection
+        // onClick={
+        //   <DateRangePicker
+        //     onChange={(item) => setState([item.selection])}
+        //     showSelectionPreview={true}
+        //     moveRangeOnFirstSelection={false}
+        //     months={2}
+        //     ranges={state}
+        //     direction="horizontal"
+        //   />
+        // }
+        title={"Journey date"}
+        country={"05/05/2023 "}
+        city={"Thursday"}
+        icon={<AiOutlineCalendar />}
+      />
+      <CardSection
+        title={" Passenger, Class"}
+        country={"0 passenger "}
+        city={"Business"}
+        // icon={<FaPlaneArrival />}
+      />
+      ;
       {/* <ToSection className="ToSection">
         <h2>Lorem ipsum dolor sit amet</h2>
         <FaPlaneArrival />
       </ToSection> */}
-      <DateSection className="DateSection">
+      {/* <DateSection className="DateSection">
         Lorem ipsum dolor sit amet,
-      </DateSection>
-      <PassengerSection className="PassengerSection">
+      </DateSection> */}
+      {/* <PassengerSection className="PassengerSection">
         Lorem ipsum dolor sit amet
-      </PassengerSection>
+      </PassengerSection> */}
     </FlightContainer>
   );
 };
@@ -193,9 +212,7 @@ const CardSection = (props) => {
         <p className="FromFirstPara">{props.country}</p>
         <p className="FromSecondPara">{props.city}</p>
       </div>
-      <FromSecIcon className="FromSecIcon">
-        {props.icon}
-      </FromSecIcon>
+      <FromSecIcon className="FromSecIcon">{props.icon}</FromSecIcon>
     </FromSection>
   );
 };
@@ -204,10 +221,10 @@ export default FlightCheck;
 
 // import Calendar from 'react-calendar';
 // import 'react-calendar/dist/Calendar.css';
-//   
+//
 // export default function CalendarGfg() {
 //     const [value, onChange] = useState(new Date());
-//   
+//
 //     return (
 //         <div>
 //             <h1>NextJs Calendar - GeeksforGeeks</h1>
